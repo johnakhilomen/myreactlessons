@@ -3,8 +3,19 @@ import './App.css';
 import React, { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+const fetch = require('node-fetch');
 
 class App extends Component {
+
+  componentDidMount()
+  {
+    fetch("https://localhost:5001/api/user/list")
+    .then((res) => res.json())
+    .then((jsonData) => {
+      console.log(jsonData);
+    })
+  }
+  
   state = 
   {
     headerInfo: {
