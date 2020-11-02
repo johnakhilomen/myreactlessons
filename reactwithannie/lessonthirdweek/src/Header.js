@@ -22,7 +22,7 @@ class Header extends Component {
                     {
                     //[1,2,3,4,3,4].filter((x) => x % 2 != 0).forEach(y=>console.log(y))
                     //Find to pull out a collection of items
-                    menus.filter(m=> m!= "Log in" && m!= "Register").map((item)=><li id={item.id}>{item}</li>)
+                    menus.filter(m=> m!= "Log in" && m!= "Register").map((item)=><li key={item}>{item}</li>)
                     }
                 </ul>
             </div>

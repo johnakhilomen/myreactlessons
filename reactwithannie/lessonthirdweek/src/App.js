@@ -9,9 +9,11 @@ class App extends Component {
 
   componentDidMount()
   {
+    let status;
     fetch("https://localhost:5001/api/user/list")
-    .then((res) => res.json())
+    .then((res) => {status = res.status; return res.json()})
     .then((jsonData) => {
+      console.log(status);
       console.log(jsonData);
     })
   }
