@@ -14,17 +14,19 @@ class Header extends Component {
         const {pgTitle, menus} = this.props.headerInfo;
         return ( 
             <div>
-                <h1>{pgTitle}</h1>
+                <center><h1>{pgTitle}</h1>
                 {/* Find to pull out just an item*/}
-                <h2>{menus.find(m => m == "Register")} On My Website!</h2>
+                {/*<h2>{menus.find(m => m == "Register")} On My Website!</h2>*/}
                 <h2></h2>
-                <ul style={{listStyle: "none"}}>
+                Home | About me | Contact me | Socials
+                {/*<ul style={{listStyle: "none"}}>
                     {
                     //[1,2,3,4,3,4].filter((x) => x % 2 != 0).forEach(y=>console.log(y))
                     //Find to pull out a collection of items
                     menus.filter(m=> m!= "Log in" && m!= "Register").map((item)=><li key={item}>{item}</li>)
                     }
-                </ul>
+                </ul>*/}
+                </center>
             </div>
          );
     }
