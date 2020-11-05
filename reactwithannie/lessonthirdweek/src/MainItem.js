@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ContentWrapper from './ContentWrapper';
 import './Main.css';
 
 class MainItem extends Component {
@@ -8,11 +9,11 @@ class MainItem extends Component {
         console.log(this.props);
     }
     render() { 
-        const {title, content} = this.props.mainItem;
+        const {title, content, image} = this.props.mainItem;
         return ( 
         <div className="mainItem">
             <h1>{title}</h1>
-            <p>{content}</p>
+            <ContentWrapper content = {content} imageSrc={image}></ContentWrapper>
         </div> );
     }
 }
