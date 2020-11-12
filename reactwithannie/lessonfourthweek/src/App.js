@@ -14,20 +14,49 @@ class App extends Component {
   {
     super();
     console.log(this.state);
+    /*this.handleFullname = this.handleFullname.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);*/
     this.handleInputChange = this.handleInputChange.bind(this);
   }
   handleInputChange(e) {
     const {name, value, type, checked} = e.target;
-    type === "checkbox" ? this.setState({ [name] : checked}) : 
+    if(type==="checkbox")
+    {
+      console.log(checked);
+      this.setState({ [name] : checked}) //"isMarried": e.target.value
+    }
+    else
+    {
+      this.setState({
+        [name] : value
+        });
+    }
+    /*type === "checkbox" ? this.setState({ [name] : checked}) : 
     this.setState({
     [name] : value
-    });
+    });*/
+    console.log(name);
   }
+  /*
+  handleFullname(e)
+  {
+    this.setState({
+      "fullname": e.target.value
+    });
+    console.log(this.state.fullname);
+  }
+  handleEmail(e)
+  {
+    this.setState({
+      "emailAddress": e.target.value
+    });
+    console.log(this.state.emailAddress);
+  }*/
   render()
   {
     return (
       <div className="App">
-      <form>
+      <form action="https://formspree.io/f/xdopdezd" method="POST">
         Fullname: <input type="text" 
         placeholder="Fullname" 
         name="fullname"
@@ -44,7 +73,6 @@ class App extends Component {
         <br></br>
         is Married? <input type="checkbox" 
         name="isMarried" 
-        value={this.state.isMarried}
         onChange={this.handleInputChange}>
         </input>
         <br></br>
@@ -65,7 +93,7 @@ class App extends Component {
           <option value="USA">USA</option>
           <option value="Canada">Canada</option>
           <option value="Mexico">Mexico</option>
-         </select>
+        </select>
         <h1>Fullname: {this.state.fullname}</h1>
         <h1>Email: {this.state.emailAddress}</h1>
         <h1>Is Married: {this.state.isMarried}</h1>
