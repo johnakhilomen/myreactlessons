@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, { Component, Suspense } from 'react';
+import Header from "./Header";
 
 class App extends Component {
   state = {
@@ -56,6 +57,7 @@ class App extends Component {
   {
     return (
       <div className="App">
+      <Header></Header>
       <form action="https://formspree.io/f/xdopdezd" method="POST">
         Fullname: <input type="text" 
         placeholder="Fullname" 

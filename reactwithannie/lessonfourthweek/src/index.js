@@ -1,17 +1,30 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import {BrowserRouter, Route, Switch} from "react-router-dom"
+import Aboutme from './Aboutme';
+import WhyAnniesPortal from "./WhyAnniesPortal";
+class Index extends Component {
+  state = {  }
+  render() { 
+    return (  
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact={true}>
+            <App></App>
+          </Route>
+          <Route path="/aboutme">
+            <Aboutme></Aboutme>
+          </Route> 
+          <Route path="/whyme">
+            <WhyAnniesPortal></WhyAnniesPortal>
+          </Route>    
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
+ 
+ReactDOM.render(<Index/>, document.getElementById('root'));
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
