@@ -1,7 +1,7 @@
 import React, { createContext, Component } from 'react';
 
+//Creating a context from React context library
 export const HeaderContext = createContext();
-
 
 class HeaderContextProvider extends Component {
     state = { 

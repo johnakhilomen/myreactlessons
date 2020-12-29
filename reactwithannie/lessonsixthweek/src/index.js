@@ -7,18 +7,26 @@ import {BrowserRouter, Route, Switch} from "react-router-dom"
 import HeaderContextProvider from './HeaderContext';
 import AnotherContextProvider from "./AnotherContext";
 import PageComponent from './PageComponent';
+import Dashboard from './Dashboard';
 
 ReactDOM.render(
   <BrowserRouter>
   <Switch>
     <Route path="/" exact={true}>
       <HeaderContextProvider>
-      <App></App>
+          <App></App>
+      </HeaderContextProvider>
+    </Route>
+    <Route path="/dashboard" exact={true}>
+      <HeaderContextProvider>
+        <AnotherContextProvider>
+          <Dashboard></Dashboard>
+       </AnotherContextProvider>
       </HeaderContextProvider>
     </Route>
     <Route path="/pg" exact={true}>
       <AnotherContextProvider>
-      <PageComponent></PageComponent>
+        <PageComponent></PageComponent>
       </AnotherContextProvider>
     </Route>
   </Switch>

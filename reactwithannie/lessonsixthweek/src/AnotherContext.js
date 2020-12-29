@@ -2,7 +2,6 @@ import React, { createContext, Component } from 'react';
 
 export const AnotherContext = createContext();
 
-
 class AnotherContextProvider extends Component {
     state = { 
         contentA: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut aliquam sem. Donec sagittis, neque vitae eleifend tincidunt, tellus neque semper tortor, eget tempus risus orci eu sem. Pellentesque nec neque dapibus, consectetur dolor ac, ultricies ante. Nulla sodales arcu nisi, id gravida erat sagittis a. Aliquam rutrum enim lectus, quis consectetur risus luctus in. Nunc nulla nisi, consectetur eget porta eu, finibus sed ipsum. Curabitur tempus nibh gravida vehicula accumsan. In laoreet maximus dapibus. Aliquam maximus arcu urna, nec egestas sapien luctus non.",

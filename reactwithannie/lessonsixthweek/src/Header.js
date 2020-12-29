@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { HeaderContext } from './HeaderContext';
 
 class Header extends Component {
+    constructor(props)
+    {
+        super(props);
+        console.log(props)
+    }
     render() { 
         return ( 
            <HeaderContext.Consumer>{(headerCtx) =>{ 
