@@ -10,16 +10,20 @@ class App extends Component {
     name: "",
     email: "",
     password: "",
-    catinfo: ""
+    catinfo: "",
+    loggedOut : true,
+    loggedIn : false,
   }
 
   constructor(props)
   {
     super();
+    console.log("App is loaded!")
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleInputChange(e) {
+    console.log(e);
     const {name, value} = e.target;
     this.setState({
         [name] : value
@@ -94,7 +98,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <h1>Admin Registration - Posting to API</h1>
+        <Header 
+        loggedOut={this.state.loggedOut}
+        loggedIn = {this.state.loggedIn}></Header>
+        <hr></hr>
+      <h1 className="headerText">Admin Registration - Posting to API</h1>
         Name: <input type="text" 
         placeholder="name" 
         name="name"
@@ -117,7 +125,7 @@ class App extends Component {
         <br></br>
         <input type="button" onClick={()=>this.handleFormSumbit()} value="Submit"></input>
         <input type="button" onClick={()=>this.handleGetCat()} value="Get Cat"></input>
-        <h1>Getting Cat Info: (Getting from API)</h1>
+        <h1 id="blueText">Getting Cat Info: (Getting from API)</h1>
         <p>{this.state.catinfo}</p>
       </div>
     );
