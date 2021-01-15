@@ -12,6 +12,7 @@ class HeaderContextProvider extends Component {
     }
     render() { 
         //Return Context.Provider object with the state passed to the value attribute
+        //The provider is what we're using to expose the state
         return ( 
             <HeaderContext.Provider value={{...this.state}}>
                 {this.props.children}
