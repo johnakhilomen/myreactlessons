@@ -9,6 +9,7 @@ class Header extends Component {
     }
     render() { 
         return ( 
+            //The consumer of the HeaderContext here will consume and use the state which is parsed to headerCtx
            <HeaderContext.Consumer>{(headerCtx) =>{ 
              console.log(headerCtx); 
              const {menu, pgTitle, subTitle} = headerCtx;
