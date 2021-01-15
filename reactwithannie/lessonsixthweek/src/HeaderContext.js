@@ -1,8 +1,9 @@
 import React, { createContext, Component } from 'react';
 
-//Creating a context from React context library
+//Instantiate a context object from React context library
 export const HeaderContext = createContext();
 
+//Create your react component as usual 
 class HeaderContextProvider extends Component {
     state = { 
         menu: ["Menu 1", "Menu 2", "Menu 3", "Menu 4"],
@@ -10,6 +11,7 @@ class HeaderContextProvider extends Component {
         subTitle: "We're building a fun site with context",
     }
     render() { 
+        //Return Context.Provider object with the state passed to the value attribute
         return ( 
             <HeaderContext.Provider value={{...this.state}}>
                 {this.props.children}
