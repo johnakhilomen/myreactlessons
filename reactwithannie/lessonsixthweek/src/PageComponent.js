@@ -12,6 +12,7 @@ class PageComponent extends Component {
                  <p>{contentA}</p>
                  <br></br>
                  <p>{contentB}</p>
+                 <button type="button" onClick={()=>pgCtx.printHelloWorld()}>Click me!</button>
              </div>
              );        
 
